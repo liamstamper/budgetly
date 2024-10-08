@@ -1,10 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/HomePage";
+import Register from "./components/Register";
 
 export default function App() {
   return (
-      <div className="min-h-screen flex justify-center items-center">
-          <h1 className="text-3xl font-bold text-blue-600">
-              Install & Setup Vite + React + Typescript + Tailwind CSS 3
-          </h1>
+    <Router>
+      <div className="min-h-screen flex bg-background-primary justify-center items-center">
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<HomePage />} />
+        </Routes>
       </div>
+    </Router>
   );
 }
